@@ -1,4 +1,4 @@
-package com.yilin.demo;
+package com.et.demo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

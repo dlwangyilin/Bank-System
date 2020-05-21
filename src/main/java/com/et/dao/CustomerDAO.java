@@ -1,6 +1,6 @@
-package com.yilin.dao;
+package com.et.dao;
 
-import com.yilin.entity.Customer;
+import com.et.entity.Customer;
 
 import java.util.List;
 

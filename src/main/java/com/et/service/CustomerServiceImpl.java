@@ -1,7 +1,7 @@
-package com.yilin.service;
+package com.et.service;
 
-import com.yilin.dao.CustomerDAO;
-import com.yilin.entity.Customer;
+import com.et.dao.CustomerDAO;
+import com.et.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

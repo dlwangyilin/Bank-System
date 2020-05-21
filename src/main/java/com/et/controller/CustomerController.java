@@ -1,8 +1,7 @@
-package com.yilin.controller;
+package com.et.controller;
 
-import com.yilin.dao.CustomerDAO;
-import com.yilin.entity.Customer;
-import com.yilin.service.CustomerService;
+import com.et.entity.Customer;
+import com.et.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -56,8 +55,7 @@ public class CustomerController {
     }
 
     @GetMapping("/search")
-    public String searchCustomers(@RequestParam("theSearchName") String theSearchName,
-                                  Model theModel) {
+    public String searchCustomers(@RequestParam("theSearchName") String theSearchName, Model theModel) {
 
         // search customers from the service
         List<Customer> theCustomers = customerService.searchCustomers(theSearchName);

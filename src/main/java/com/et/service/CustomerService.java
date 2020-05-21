@@ -1,6 +1,6 @@
-package com.yilin.service;
+package com.et.service;
 
-import com.yilin.entity.Customer;
+import com.et.entity.Customer;
 
 import java.util.List;
 

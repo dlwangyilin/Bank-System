@@ -1,4 +1,4 @@
-package com.yilin.entity;
+package com.et.entity;
 
 import javax.persistence.*;
 

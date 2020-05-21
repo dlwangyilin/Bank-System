@@ -16,7 +16,7 @@
 <body>
 <div id="wrapper">
     <div id="header">
-        <h2>DaBaoBao Bank System</h2>
+        <h2>ET Bank System</h2>
     </div>
     <div id="container">
         <div id="content">
