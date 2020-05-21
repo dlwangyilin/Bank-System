@@ -48,6 +48,11 @@
       <version>5.2.16.Final</version>
     </dependency>
 
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
 
   </dependencies>
 
