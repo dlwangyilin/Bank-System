@@ -18,9 +18,11 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
     <springframework.version>5.2.6.RELEASE</springframework.version>
-    <hibernate.version>5.4.4.Final</hibernate.version>
+    <springsecurity.version>5.3.2.RELEASE</springsecurity.version>
+    <hibernate.version>5.4.16.Final</hibernate.version>
+    <hibernate.validator.version>6.1.5.Final</hibernate.validator.version>
     <mysql.connector.version>8.0.20</mysql.connector.version>
-    <c3po.version>0.9.5.2</c3po.version>
+    <c3po.version>0.9.5.5</c3po.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
@@ -55,6 +57,13 @@
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
       <version>${hibernate.version}</version>
+    </dependency>
+
+    <!-- Hibernate Validator-->
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>${hibernate.validator.version}</version>
     </dependency>
 
     <!-- MySQL -->
@@ -97,6 +106,25 @@
       <version>2.3.0</version>
     </dependency>
 
+    <!-- spring security  -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+      <version>${springsecurity.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>${springsecurity.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-taglibs</artifactId>
+      <version>${springsecurity.version}</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -131,6 +159,11 @@
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.3</version>
         </plugin>
       </plugins>
     </pluginManagement>
