@@ -24,6 +24,13 @@
         </p>
     </security:authorize>
 
+    <tr>
+        <td>${user.userName}</td>
+        <td>${user.firstName}</td>
+        <td>${user.email}</td>
+        <td>${user.value}</td>
+
+    </tr>
     <%-- log out support--%>
     <form:form action="${pageContext.request.contextPath}/logout" method="post">
         <input type="submit" value="Logout">
