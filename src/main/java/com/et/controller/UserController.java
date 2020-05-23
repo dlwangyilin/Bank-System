@@ -9,15 +9,18 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
     // inject user service
     @Autowired
     private UserService userService;
 
-    @GetMapping("/user")
+    @GetMapping("/")
     public String showHome(Model model) {
         SecurityContext ctx = SecurityContextHolder.getContext();
         Authentication auth = ctx.getAuthentication();
@@ -27,6 +30,16 @@ public class UserController {
         System.out.println(theUser.getUserName());
         System.out.println(theUser.getPassword());
         return "home";
+    }
+
+    @GetMapping("/deposit")
+    public String deposit(@RequestParam("userId") int id, Model model) {
+        return "deposit";
+    }
+
+    @GetMapping("/withdraw")
+    public String withdraw(@RequestParam("userId") int id, Model model) {
+        return "withdraw";
     }
 
 }

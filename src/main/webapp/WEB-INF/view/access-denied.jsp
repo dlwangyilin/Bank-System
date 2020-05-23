@@ -17,6 +17,6 @@
 </head>
 <body>
     <h2> Access Denied!</h2>
-    <a href="${pageContext.request.contextPath}/user">Back to home page</a>
+    <a href="${pageContext.request.contextPath}/user/">Back to home page</a>
 </body>
 </html>

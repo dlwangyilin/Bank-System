@@ -41,11 +41,11 @@
                 <c:forEach var="curUser" items="${users}">
 
                     <c:url var="updateLink" value="/admin/showFormForUpdate">
-                        <c:param name="customerId" value="${curUser.id}"/>
+                        <c:param name="userId" value="${curUser.id}"/>
                     </c:url>
 
                     <c:url var="deleteLink" value="/admin/delete">
-                        <c:param name="customerId" value="${curUser.id}"/>
+                        <c:param name="userId" value="${curUser.id}"/>
                     </c:url>
 
                     <tr>

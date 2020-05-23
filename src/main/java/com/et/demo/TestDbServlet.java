@@ -12,16 +12,14 @@ import java.sql.DriverManager;
 
 @WebServlet("/TestServlet")
 public class TestDbServlet extends HttpServlet {
+
     private static final long serialVersionUID = 1L;
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException {
         // setup connection variables
         String user = "admin";
         String pass = "123456";
-        String jdbcUrl = "jdbc:mysql://localhost:3306/bank_tracker?useSSL=false&serverTimezone=UTC";
+        String jdbcUrl = "jdbc:mysql://localhost:3306/bank_tracker_with_pass?useSSL=false&serverTimezone=UTC";
         String driver = "com.mysql.cj.jdbc.Driver";
         // get connection to database
         try {

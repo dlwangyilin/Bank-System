@@ -8,10 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
 <head>
     <title>Home Page</title>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
     <h3>This is a home page for all users.</h3>
@@ -24,13 +26,37 @@
         </p>
     </security:authorize>
 
-    <tr>
-        <td>${user.userName}</td>
-        <td>${user.firstName}</td>
-        <td>${user.email}</td>
-        <td>${user.value}</td>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Value</th>
+            <th>Action</th>
+        </tr>
 
-    </tr>
+        <c:url var="deposit" value="/user/deposit">
+            <c:param name="userId" value="${user.id}"/>
+        </c:url>
+
+        <c:url var="withdraw" value="/user/withdraw">
+            <c:param name="userId" value="${user.id}"/>
+        </c:url>
+
+        <tr>
+            <td>${user.userName}</td>
+            <td>${user.firstName}</td>
+            <td>${user.email}</td>
+            <td>${user.value}</td>
+            <td>
+                <a href="${deposit}">Deposit</a>
+                |
+                <a href="${withdraw}">Withdraw</a>
+            </td>
+
+
+        </tr>
+    </table>
     <%-- log out support--%>
     <form:form action="${pageContext.request.contextPath}/logout" method="post">
         <input type="submit" value="Logout">
