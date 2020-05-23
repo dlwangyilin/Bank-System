@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserService {
 		user.setValue(0);
 
 		// give user default role of "employee"
-		user.setRoles(Arrays.asList(roleDao.findRoleByName("ROLE_EMPLOYEE")));
+		user.setRoles(Arrays.asList(roleDao.findRoleByName("ROLE_CUSTOMER")));
 
 		 // save user in the database
 		userDao.save(user);
