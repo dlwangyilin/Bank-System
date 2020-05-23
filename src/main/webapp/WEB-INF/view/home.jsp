@@ -24,5 +24,10 @@
         </p>
     </security:authorize>
 
+    <%-- log out support--%>
+    <form:form action="${pageContext.request.contextPath}/logout" method="post">
+        <input type="submit" value="Logout">
+    </form:form>
+
 </body>
 </html>
