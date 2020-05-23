@@ -3,6 +3,7 @@
 ## Preparation for database
 
 ```sql
+-- This is a script for MySQL
 -- create a user
 CREATE USER 'admin'@'localhost' IDENTIFIED BY '123456';
 
@@ -106,4 +107,8 @@ VALUES
 (3, 1),
 (3, 2)
 ```
+
+Table relationship is as follows.
+
+![re](https://i.imgur.com/tAoZHS3.png)
 
