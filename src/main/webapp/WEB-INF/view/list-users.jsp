@@ -38,25 +38,25 @@
                     <th>Value</th>
                     <th>Action</th>
                 </tr>
-                <c:forEach var="curCustomer" items="${customers}">
+                <c:forEach var="curUser" items="${users}">
 
-                    <c:url var="updateLink" value="/customer/showFormForUpdate">
-                        <c:param name="customerId" value="${curCustomer.id}"/>
+                    <c:url var="updateLink" value="/admin/showFormForUpdate">
+                        <c:param name="customerId" value="${curUser.id}"/>
                     </c:url>
 
-                    <c:url var="deleteLink" value="/customer/delete">
-                        <c:param name="customerId" value="${curCustomer.id}"/>
+                    <c:url var="deleteLink" value="/admin/delete">
+                        <c:param name="customerId" value="${curUser.id}"/>
                     </c:url>
 
                     <tr>
-                        <td>${curCustomer.firstName}</td>
-                        <td>${curCustomer.lastName}</td>
-                        <td>${curCustomer.email}</td>
-                        <td>${curCustomer.value}</td>
+                        <td>${curUser.firstName}</td>
+                        <td>${curUser.lastName}</td>
+                        <td>${curUser.email}</td>
+                        <td>${curUser.value}</td>
                         <td>
                             <a href="${updateLink}">Update</a>
                             |
-                            <a href="${deleteLink}" onclick="if(!(confirm('Are you sure you wanna delete this user? ${curCustomer.lastName} ${curCustomer.firstName}')))
+                            <a href="${deleteLink}" onclick="if(!(confirm('Are you sure you wanna delete this user? ${curUser.lastName} ${curUser.firstName}')))
                                 return false"
                             >Delete</a>
                         </td>

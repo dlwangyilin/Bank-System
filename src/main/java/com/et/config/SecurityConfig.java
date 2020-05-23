@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/").permitAll()  // allow public access to landing page
-                .antMatchers("/customer/**").hasRole("CUSTOMER")
+                .antMatchers("/user/**").hasRole("CUSTOMER")
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .and()
                 .formLogin()
