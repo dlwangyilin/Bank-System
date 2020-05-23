@@ -10,7 +10,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Long id;
+	private int id;
 
 	@Column(name = "username")
 	private String userName;
@@ -28,7 +28,7 @@ public class User {
 	private String email;
 
 	@Column(name = "value")
-	private int value;
+	private double value;
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "users_roles", 
@@ -39,7 +39,7 @@ public class User {
 	public User() {
 	}
 
-	public User(String userName, String password, String firstName, String lastName, String email, int value) {
+	public User(String userName, String password, String firstName, String lastName, String email, double value) {
 		this.userName = userName;
 		this.password = password;
 		this.firstName = firstName;
@@ -58,11 +58,11 @@ public class User {
 		this.roles = roles;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -106,11 +106,11 @@ public class User {
 		this.email = email;
 	}
 
-	public int getValue() {
+	public double getValue() {
 		return value;
 	}
 
-	public void setValue(int value) {
+	public void setValue(double value) {
 		this.value = value;
 	}
 

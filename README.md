@@ -30,7 +30,7 @@ CREATE TABLE `user` (
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `value` int default 0, 
+  `value` double default 0.0, 
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
@@ -110,5 +110,5 @@ VALUES
 
 Table relationship is as follows.
 
-![re](https://i.imgur.com/tAoZHS3.png)
+![re](https://i.imgur.com/yoJorNX.png)
 

@@ -42,7 +42,7 @@
                     </tr>
 
                     <tr>
-                        <td><label>Value:</label></td>
+                        <td><label>Balance:</label></td>
                         <td> <form:input path="value" /> </td>
                     </tr>
 

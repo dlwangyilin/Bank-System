@@ -14,6 +14,14 @@
 <head>
     <title>Home Page</title>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
+    <style>
+        .success {
+            color: #09c332;
+        }
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h3>This is a home page for all users.</h3>
@@ -25,6 +33,18 @@
             <a href="${pageContext.request.contextPath}/admin/list"> List all users </a>
         </p>
     </security:authorize>
+
+    <c:if test="${success != null}">
+        <div class=success>
+            ${success}
+        </div>
+    </c:if>
+
+    <c:if test="${error != null}">
+        <div class=error>
+                ${error}
+        </div>
+    </c:if>
 
     <table>
         <tr>
