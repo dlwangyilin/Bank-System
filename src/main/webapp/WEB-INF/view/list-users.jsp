@@ -21,7 +21,7 @@
     <div id="container">
         <div id="content">
             <%-- button for add cutomer--%>
-                <input type="button" value="Add Customer" onclick="window.location.href='showFormForAdd'; return false;"
+                <input type="button" value="Add Customer" onclick="window.location.href='${pageContext.request.contextPath}/register/showRegistrationForm'; return false;"
                 class="add-button"/>
                 <br><br>
                 <!--  add a search box -->
@@ -64,6 +64,9 @@
                 </c:forEach>
             </table>
         </div>
+        <p>
+            <a href="${pageContext.request.contextPath}/user/">Back to own page</a>
+        </p>
     </div>
 </div>
 </body>

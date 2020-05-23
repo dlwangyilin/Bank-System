@@ -9,7 +9,10 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/user")
@@ -39,14 +42,18 @@ public class UserController {
     }
 
     @PostMapping("/processDeposit")
-    public String processDeposit(@ModelAttribute("delta") ActionUser actionUser, Model model) {
+    public String processDeposit(@Valid @ModelAttribute("delta") ActionUser actionUser, BindingResult theBindingResult, Model model) {
+        if (theBindingResult.hasErrors()) {
+            return "deposit";
+        }
         User theUser = userService.getUser( actionUser.getUserId());
         double balance = theUser.getValue();
-        if (actionUser.getDeltaVal() < 0) {
+        double deltaVal = Double.parseDouble(actionUser.getDeltaVal());
+        if (deltaVal < 0) {
             model.addAttribute("error", "Failed. You can't deposit negative amount! ");
         } else {
             model.addAttribute("success", "Successful deposit!");
-            theUser.setValue(balance + actionUser.getDeltaVal());
+            theUser.setValue(balance + deltaVal);
             userService.saveUser(theUser);
         }
         model.addAttribute("user", theUser);
@@ -61,16 +68,20 @@ public class UserController {
     }
 
     @PostMapping("/processWithdraw")
-    public String processWithdraw(@ModelAttribute("delta") ActionUser actionUser, Model model) {
+    public String processWithdraw(@Valid @ModelAttribute("delta") ActionUser actionUser, BindingResult theBindingResult, Model model) {
+        if (theBindingResult.hasErrors()) {
+            return "withdraw";
+        }
         User theUser = userService.getUser( actionUser.getUserId());
         double balance = theUser.getValue();
-        if (actionUser.getDeltaVal() < 0) {
+        double deltaVal = Double.parseDouble(actionUser.getDeltaVal());
+        if (deltaVal < 0) {
             model.addAttribute("error", "Failed. You can't withdraw negative amount! ");
-        } else if (balance <= actionUser.getDeltaVal()) {
+        } else if (balance <= deltaVal) {
             model.addAttribute("error", "Failed. You don't have enough money! ");
         } else {
             model.addAttribute("success", "Successful withdrawal!");
-            theUser.setValue(balance - actionUser.getDeltaVal());
+            theUser.setValue(balance - deltaVal);
             userService.saveUser(theUser);
         }
         model.addAttribute("user", theUser);

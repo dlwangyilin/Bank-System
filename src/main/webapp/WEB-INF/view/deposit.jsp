@@ -11,6 +11,11 @@
 <html>
 <head>
     <title>Deposit</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 
@@ -29,8 +34,12 @@
             <tbody>
                 <tr>
                     <td><label>Deposit: </label></td>
-                        <form:hidden path="userId" />
+                    <form:hidden path="userId" />
+                    <td>
                         <form:input path="deltaVal" placeholder="Deposit" />
+                        <form:errors path="deltaVal" cssClass="error"/>
+                    </td>
+
                 </tr>
 
                 <tr>

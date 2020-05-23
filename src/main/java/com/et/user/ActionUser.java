@@ -1,15 +1,20 @@
 package com.et.user;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 public class ActionUser {
 
     private int userId;
-    private double deltaVal;
+    @NotNull
+    @Pattern(regexp = "(0\\.[0-9]+)|([1-9][0-9]*\\.[0-9]+)|([1-9][0-9]+)", message = "Need double input without leading zeros")
+    private String deltaVal;
 
     public ActionUser() {}
 
     public ActionUser (int userId) {
         this.userId = userId;
-        this.deltaVal = 0;
+        this.deltaVal = "0";
     }
 
     public int getUserId() {
@@ -20,11 +25,11 @@ public class ActionUser {
         this.userId = userId;
     }
 
-    public double getDeltaVal() {
+    public String getDeltaVal() {
         return deltaVal;
     }
 
-    public void setDeltaVal(double deltaVal) {
+    public void setDeltaVal(String deltaVal) {
         this.deltaVal = deltaVal;
     }
 }

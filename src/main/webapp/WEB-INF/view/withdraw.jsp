@@ -10,6 +10,11 @@
 <html>
 <head>
     <title>Withdraw</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <<div id="wrapper">
@@ -27,7 +32,11 @@
             <tr>
                 <td><label>Withdraw: </label></td>
                 <form:hidden path="userId" />
-                <form:input path="deltaVal" placeholder="Withdraw" />
+                <td>
+                    <form:input path="deltaVal" placeholder="Withdraw" />
+                    <form:errors path="deltaVal" cssClass="error"/>
+                </td>
+
             </tr>
 
             <tr>
