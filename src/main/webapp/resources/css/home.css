@@ -1,0 +1,27 @@
+.table {
+    margin-left: 10%;
+    margin-top: 50px;
+    width: 80%;
+
+}
+
+input {
+    margin-left: 10%;
+}
+
+#listAll {
+    margin-left: 10%;
+}
+
+.success {
+    color: #09c332;
+    font-family: 'Lato' ;
+    font-size: xx-large;
+    margin-left: 10%;
+}
+.error {
+    color: red;
+    font-family: 'Lato' ;
+    font-size: xx-large;
+    margin-left: 10%;
+}
