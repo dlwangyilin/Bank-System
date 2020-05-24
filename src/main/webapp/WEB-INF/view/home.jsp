@@ -21,14 +21,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/31051bc840.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <style>
-        .success {
-            color: #09c332;
-        }
-        .error {
-            color: red;
-        }
-    </style>
 </head>
 <body>
 

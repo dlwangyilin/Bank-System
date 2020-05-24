@@ -1,0 +1,7 @@
+#container {width: 80%; margin:auto}
+#container h3 {color: #000;}
+#container #content {margin-top: 20px;}
+#wrapper {width: 80%; margin: auto}
+.error {
+    color: red;
+}

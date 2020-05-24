@@ -12,3 +12,16 @@ input {
 #listAll {
     margin-left: 10%;
 }
+
+.success {
+    color: #09c332;
+    font-family: 'Lato' ;
+    font-size: xx-large;
+    margin-left: 10%;
+}
+.error {
+    color: red;
+    font-family: 'Lato' ;
+    font-size: xx-large;
+    margin-left: 10%;
+}
