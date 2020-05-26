@@ -70,7 +70,7 @@
 
     <div id="container">
 
-    <form:form action="${pageContext.request.contextPath}/user/processDeposit" cssClass="form-inline" modelAttribute="delta">
+    <form:form action="${pageContext.request.contextPath}/user/processDeposit" cssClass="form-inline" modelAttribute="delta" method="post">
         <table class="table table-striped">
             <tbody>
             <tr>

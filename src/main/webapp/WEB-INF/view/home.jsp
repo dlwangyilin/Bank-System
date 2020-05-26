@@ -24,7 +24,7 @@
 </head>
 <body>
 
-<c:url var="deposit" value="/user/deposit">
+<c:url var="deposit" value="/user/deposit" >
     <c:param name="userId" value="${user.id}"/>
 </c:url>
 
