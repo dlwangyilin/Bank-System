@@ -77,7 +77,7 @@ public class UserController {
         double deltaVal = Double.parseDouble(actionUser.getDeltaVal());
         if (deltaVal < 0) {
             model.addAttribute("error", "Failed. You can't withdraw negative amount! ");
-        } else if (balance <= deltaVal) {
+        } else if (balance < deltaVal) {
             model.addAttribute("error", "Failed. You don't have enough money! ");
         } else {
             model.addAttribute("success", "Successful withdrawal!");

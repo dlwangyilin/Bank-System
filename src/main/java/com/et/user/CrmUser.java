@@ -4,6 +4,7 @@ import com.et.validation.FieldMatch;
 import com.et.validation.ValidEmail;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @FieldMatch.List({
@@ -35,6 +36,10 @@ public class CrmUser {
     @NotNull(message = "is required")
     @Size(min = 1, message = "is required")
     private String email;
+
+    @NotNull(message = "is required")
+    @Pattern(regexp = "(0\\.[0-9]+)|([1-9][0-9]*\\.[0-9]+)|([1-9][0-9]*)", message = "Need double input without leading zeros")
+    private String balance;
 
     public CrmUser() {
 
@@ -88,4 +93,11 @@ public class CrmUser {
         this.email = email;
     }
 
+    public String getBalance() {
+        return balance;
+    }
+
+    public void setBalance(String balance) {
+        this.balance = balance;
+    }
 }

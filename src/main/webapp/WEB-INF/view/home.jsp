@@ -90,8 +90,6 @@
             <th>Action</th>
         </tr>
 
-
-
         <tr>
             <td>${user.firstName}</td>
             <td>${user.lastName}</td>
