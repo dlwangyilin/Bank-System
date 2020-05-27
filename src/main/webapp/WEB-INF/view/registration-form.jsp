@@ -53,8 +53,6 @@
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->
 </nav>
-
-
 		
 		<div id="loginbox" style="margin-left: 33%;margin-top: 50px"
 			class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
@@ -156,8 +154,6 @@
 			</div>
 
 		</div>
-
-
 
 </body>
 </html>
