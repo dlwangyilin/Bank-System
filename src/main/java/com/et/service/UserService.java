@@ -12,6 +12,8 @@ public interface UserService extends UserDetailsService {
 
     void save(CrmUser crmUser);
 
+    void save(User theUser);
+
 
     List<User> getUsers();
 

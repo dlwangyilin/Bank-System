@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <title>Add a customer</title>
@@ -25,6 +26,7 @@
         <form:form action="saveUser" modelAttribute="user" method="post">
             <form:hidden path="id" />
             <form:hidden path="password" />
+
             <table>
                 <tbody>
                     <tr>

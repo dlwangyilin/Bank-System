@@ -22,13 +22,6 @@
 
 </head>
 <body>
-<c:url var="deposit" value="/user/deposit">
-    <c:param name="userId" value="${user.id}"/>
-</c:url>
-
-<c:url var="withdraw" value="/user/withdraw">
-    <c:param name="userId" value="${user.id}"/>
-</c:url>
 
 <nav class="navbar navbar-default">
     <div class="container">
@@ -47,8 +40,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="${pageContext.request.contextPath}/user/">Home</a></li>
-                <li><a href="${deposit}">Deposit</a></li>
-                <li><a href="${withdraw}">Withdraw</a></li>
+                <li><a href="${pageContext.request.contextPath}/#">Contact</a></li>
+                <li><a href="${pageContext.request.contextPath}/#">About</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

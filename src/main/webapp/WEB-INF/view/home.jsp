@@ -24,14 +24,6 @@
 </head>
 <body>
 
-<c:url var="deposit" value="/user/deposit" >
-    <c:param name="userId" value="${user.id}"/>
-</c:url>
-
-<c:url var="withdraw" value="/user/withdraw">
-    <c:param name="userId" value="${user.id}"/>
-</c:url>
-
     <nav class="navbar navbar-default">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -49,8 +41,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="${pageContext.request.contextPath}/user/">Home</a></li>
-                    <li><a href="${deposit}">Deposit</a></li>
-                    <li><a href="${withdraw}">Withdraw</a></li>
+                    <li><a href="${pageContext.request.contextPath}/user/#">Contact</a></li>
+                    <li><a href="${pageContext.request.contextPath}/user/#">About</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -98,9 +90,15 @@
             <td>${user.email}</td>
             <td>${user.value}</td>
             <td>
-                <a href="${deposit}">Deposit</a>
-                |
-                <a href="${withdraw}">Withdraw</a>
+                <form:form action="${pageContext.request.contextPath}/user/deposit" modelAttribute="user" method="post">
+                    <form:hidden path="id" />
+                    <input type="submit" value="Deposit" class="btn btn-danger">
+                </form:form>
+
+                <form:form action="${pageContext.request.contextPath}/user/withdraw" modelAttribute="user" method="post">
+                    <form:hidden path="id" />
+                    <input type="submit" value="Withdraw" class="btn btn-danger">
+                </form:form>
             </td>
 
 

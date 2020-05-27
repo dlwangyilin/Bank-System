@@ -29,13 +29,12 @@ public class UserController {
         String name = ((org.springframework.security.core.userdetails.User) auth.getPrincipal()).getUsername();
         User theUser = userService.findByUserName(name);
         model.addAttribute("user", theUser);
-        System.out.println(theUser.getUserName());
-        System.out.println(theUser.getPassword());
         return "home";
     }
 
-    @GetMapping("/deposit")
-    public String deposit(@RequestParam("userId") int id, Model model) {
+    @PostMapping("/deposit")
+    public String deposit(@ModelAttribute("user") User theUser, Model model) {
+        int id = theUser.getId();
         ActionUser delta = new ActionUser(id);
         model.addAttribute("delta", delta);
         return "deposit";
@@ -60,8 +59,9 @@ public class UserController {
         return "home";
     }
 
-    @GetMapping("/withdraw")
-    public String withdraw(@RequestParam("userId") int id, Model model) {
+    @PostMapping("/withdraw")
+    public String withdraw(@ModelAttribute("user") User theUser, Model model) {
+        int id = theUser.getId();
         ActionUser delta = new ActionUser(id);
         model.addAttribute("delta", delta);
         return "withdraw";

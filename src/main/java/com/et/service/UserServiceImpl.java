@@ -61,6 +61,16 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	@Transactional
+	public void save(User theUser) {
+		// give user default role of "customer"
+		theUser.setRoles(Arrays.asList(roleDao.findRoleByName("ROLE_CUSTOMER")));
+
+		// save user in the database
+		userDao.save(theUser);
+	}
+
+	@Override
+	@Transactional
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		User user = userDao.findByUserName(userName);
 		if (user == null) {
