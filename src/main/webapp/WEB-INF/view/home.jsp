@@ -41,8 +41,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="${pageContext.request.contextPath}/user/">Home</a></li>
-                    <li><a href="${pageContext.request.contextPath}/user/#">Contact</a></li>
-                    <li><a href="${pageContext.request.contextPath}/user/#">About</a></li>
+                    <li><a href="${pageContext.request.contextPath}/user/about">Contact</a></li>
+                    <li><a href="${pageContext.request.contextPath}/user/about">About</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -79,7 +79,8 @@
             <th>Last Name</th>
             <th>Email</th>
             <th>Value</th>
-            <th>Action</th>
+            <th>Deposit</th>
+            <th>Withdraw</th>
         </tr>
 
 
@@ -90,12 +91,13 @@
             <td>${user.email}</td>
             <td>${user.value}</td>
             <td>
-                <form:form action="${pageContext.request.contextPath}/user/deposit" modelAttribute="user" method="post">
+                <form:form action="${pageContext.request.contextPath}/user/deposit" cssClass="form-inline" modelAttribute="user" method="post">
                     <form:hidden path="id" />
-                    <input type="submit" value="Deposit" class="btn btn-danger">
+                    <input type="submit" value="Deposit" class="btn btn-primary">
                 </form:form>
-
-                <form:form action="${pageContext.request.contextPath}/user/withdraw" modelAttribute="user" method="post">
+            </td>
+            <td>
+                <form:form action="${pageContext.request.contextPath}/user/withdraw" cssClass="form-inline" modelAttribute="user" method="post">
                     <form:hidden path="id" />
                     <input type="submit" value="Withdraw" class="btn btn-danger">
                 </form:form>

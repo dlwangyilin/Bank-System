@@ -32,6 +32,11 @@ public class UserController {
         return "home";
     }
 
+    @GetMapping("/about")
+    public String showAbout(Model model) {
+        return "about";
+    }
+
     @PostMapping("/deposit")
     public String deposit(@ModelAttribute("user") User theUser, Model model) {
         int id = theUser.getId();
