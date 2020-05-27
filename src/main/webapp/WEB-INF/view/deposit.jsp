@@ -70,7 +70,6 @@
                 <td><label>Deposit: </label></td>
                 <form:hidden path="userId" />
                 <td>
-                    
                     <form:input path="deltaVal" placeholder="Deposit" />
                     <form:errors path="deltaVal" cssClass="error"/>
                 </td>
