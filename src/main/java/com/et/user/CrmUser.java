@@ -14,10 +14,12 @@ public class CrmUser {
 
     @NotNull(message = "is required")
     @Size(min = 1, message = "is required")
+    @Pattern(regexp = "/[_\\-\\.0-9a-z]{8,20}/", message = "Length should be at least 8 characters and at most 20 characters, and could only contains'0-9-_.'")
     private String userName;
 
     @NotNull(message = "is required")
     @Size(min = 1, message = "is required")
+    @Pattern(regexp = "/[_\\-\\.0-9a-z]{8,20}/", message = "Length should be at least 8 characters and at most 20 characters, and could only contains'0-9-_.'")
     private String password;
 
     @NotNull(message = "is required")
