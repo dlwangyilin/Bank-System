@@ -35,7 +35,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="${pageContext.request.contextPath}/">ET Bank</a>
+			<a class="navbar-brand" href="${pageContext.request.contextPath}/user/">ET Bank</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
