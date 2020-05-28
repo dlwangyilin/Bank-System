@@ -45,10 +45,6 @@
                     <li><a href="${pageContext.request.contextPath}/user/about">About</a></li>
                 </ul>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="${pageContext.request.contextPath}/register/showRegistrationForm">Sign Up <i class="fas fa-user-plus"></i></a></li>
-                    <li><a href="${pageContext.request.contextPath}/showMyLoginPage">Login <i class="fas fa-user"></i></a></li>
-                </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
