@@ -69,7 +69,7 @@
         </div>
     </c:if>
 
-    <table class="table table-striped">
+    <table class="table table-striped" >
         <tr>
             <th>First Name</th>
             <th>Last Name</th>

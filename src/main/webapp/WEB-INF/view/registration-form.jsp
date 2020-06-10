@@ -70,7 +70,8 @@
 					<!-- Registration Form -->
 					<form:form action="${pageContext.request.contextPath}/register/processRegistrationForm" 
 						  	   modelAttribute="crmUser"
-						  	   class="form-horizontal">
+						  	   class="form-horizontal"
+							   htmlEscape="true">
 
 					    <!-- Place for messages: error, alert etc ... -->
 					    <div class="form-group">
